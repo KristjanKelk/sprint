@@ -1,1 +1,1 @@
-gls --format=commas -t -F
+ls --format=commas -t -F
