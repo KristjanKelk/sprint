@@ -2,10 +2,10 @@
 touch a '!' '\\' '"'
 
 # Create a directory called `
-mkdir '`'
+mkdir \'
 
 # Copy the file ! into `
-cp '!' '`'
+cp "!" \`
 
 # Check the MOVE_A environment variable
 if [ "$MOVE_A" = "yes" ]; then
