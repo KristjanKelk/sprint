@@ -1,1 +1,1 @@
-ls -pAt | grep -v -E '/$|^\.\.?$' | tr '\n' ', ' | sed 's/, $/\n/'
+gls --format=commas -t -F
