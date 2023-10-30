@@ -1,11 +1,10 @@
 #!/bin/bash
 
-# Use 'find' to list all unhidden files in the current directory and its subdirectories
-usage="Number of unhidden files: "
-file_count=$(find . -type f -not -path '*/\.*' | wc -l)
+# Use 'find' to count the number of files and directories
+count=$(find . -type f -o -type d | grep -v '/\.' | wc -l)
 
-result=$(($file_count * 5))
+# Multiply the count by 5
+result=$((count * 5))
 
-
-# Display the result
-printf "\t$usage\t%d\n\n" "$result"
+# Use 'printf' to format and print the result with tabs and newlines
+printf "\t\v%d\n" "$result"
