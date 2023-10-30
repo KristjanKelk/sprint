@@ -1,6 +1,3 @@
-count=$(find . -type f -o -type d -not -path '*/\.*' | wc -l)
-
-
-result=$((count * 5))
-
-printf "\tTotal files * 5: %d\t\n" "$result"
+file_count=$(find . -type f -o -type d | grep -v '/\.' | wc -l)
+result=$((file_count*5))
+printf "\t\vTotal files * 5: %d\v\n" "$result"
