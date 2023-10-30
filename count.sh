@@ -10,4 +10,4 @@ result=$((count * 5))
 usage="Usage: "
 
 # Use 'printf' to format and print the result
-printf "\v\t%s\t%d\v\n" "$usage" "$result"
+printf "\t%s%d\t\n" "$usage" "$result"
