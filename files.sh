@@ -1,6 +1,6 @@
 
 # Create files a, !, \, and "
-touch a '!' '\\' '"'
+touch a '!' '\' '"'
 
 # Create a directory called `
 mkdir '`'
