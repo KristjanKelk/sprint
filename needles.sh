@@ -1,0 +1,1 @@
+grep -o -i 'not' hay.txt | wc -l
