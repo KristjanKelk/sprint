@@ -2,10 +2,10 @@ package sprint
 
 func IntVsFloat(i int, f float32) string {
 	if float32(i) > f {
-		return "integer"
+		return "Integer"
 	} else if float32(i) == f {
-		return "same"
+		return "Same"
 	} else {
-		return "float"
+		return "Float"
 	}
 }
