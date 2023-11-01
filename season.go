@@ -11,6 +11,6 @@ func Season(month string) string {
 	case "sep", "oct", "nov":
 		return "autumn"
 	default:
-		return "Invalid input: " + month
+		return "Invalid input:" + month
 	}
 }
