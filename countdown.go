@@ -1,11 +1,11 @@
 package sprint
 
-import "fmt"
-
 func Countdown(n int) string {
 	countdown := ""
-	for i := n; i >= 1; i -= 2 {
-		countdown += fmt.Sprintf("%d, ", i)
+	for i := n; i > 0; i -= 2 {
+		char := '0' + rune(i)
+		countdown += string(char)
+		countdown += ", "
 	}
 	return countdown + "0!"
 }
