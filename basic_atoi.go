@@ -7,7 +7,7 @@ func BasicAtoi(s string) int {
 	for i := 0; i < len(s); i++ {
 		digit := int(s[i] - '0')
 		if digit < 0 || digit > 9 {
-			return 0 // Invalid character in the string
+			return 0
 		}
 		newInteger = newInteger*10 + digit
 	}
