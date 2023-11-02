@@ -2,7 +2,7 @@ package sprint
 
 import "fmt"
 
-func GenerateCombinations() string {
+func Pairs() string {
 	combinations := ""
 	for i := 10; i <= 99; i++ {
 		for j := i + 1; j <= 99; j++ {
