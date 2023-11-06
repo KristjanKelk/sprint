@@ -26,3 +26,9 @@ func BalanceOut(arr []bool) []bool {
 
 	return balancedSlice
 }
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
