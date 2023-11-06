@@ -1,24 +1,27 @@
 package sprint
 
 func BalanceOut(arr []bool) []bool {
-	count := 0
+	countTrue := 0
+	countFalse := 0
+
+	// Count the number of true and false values in the input slice
 	for _, value := range arr {
 		if value == true {
-			count++
+			countTrue++
+		} else {
+			countFalse++
 		}
 	}
 
-	// Calculate the number of excess true or false values
-	excess := count - len(arr)/2
+	// Calculate the number of true and false values needed to balance the slice
+	balanceCount := min(countTrue, countFalse)
 
-	// Create a new slice with balanced values
-	balancedSlice := []bool{}
-	for _, value := range arr {
-		if value == true && excess > 0 {
-			excess--
-		} else {
-			balancedSlice = append(balancedSlice, value)
-		}
+	// Create a new slice with balanced true and false values
+	balancedSlice := make([]bool, 2*balanceCount)
+
+	for i := 0; i < balanceCount; i++ {
+		balancedSlice[i] = true
+		balancedSlice[i+balanceCount] = false
 	}
 
 	return balancedSlice
