@@ -1,3 +1,5 @@
+package sprint
+
 func FilterBySum(arr [][]int, limit int) [][]int {
 	result := [][]int{}
 	sum := 0
