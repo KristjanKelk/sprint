@@ -6,9 +6,11 @@ func MakeRange(min, max int) []int {
 	if min >= max {
 		return nilSlice
 	} else {
+		rangeSlice := []int{}
 		for i := min; min < max; i++ {
-			rangeSlice := []int{}
 			rangeSlice = append(rangeSlice, i)
 		}
+		return rangeSlice
+
 	}
 }
