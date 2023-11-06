@@ -11,3 +11,17 @@ func Accumulate(n int) int {
 		return sum
 	}
 }
+
+/*
+
+func Accumulate(n int) int {
+	if n < 0 {
+		return 0
+	}
+	return Accumulate(n-1) + n
+}
+
+
+
+
+*/
