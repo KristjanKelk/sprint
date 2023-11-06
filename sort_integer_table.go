@@ -1,3 +1,5 @@
+package sprint
+
 func SortIntegerTable(table []int) []int {
 	max:=tabel[0]
 	result:= []int
