@@ -16,6 +16,10 @@ func RemoveElementsInRange(arr []float64, from, to int) []float64 {
 		to = len(arr)
 	}
 
+	if from > to {
+		from, to = to, from
+	}
+
 	for i := 0; i < len(arr); i++ {
 		if i < from || i >= to {
 			excludeSlice = append(excludeSlice, arr[i])
