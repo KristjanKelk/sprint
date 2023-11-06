@@ -2,9 +2,8 @@ package sprint
 
 func MakeRange(min, max int) []int {
 
-	var nilSlice []int
 	if min >= max {
-		return nilSlice
+		return nil
 	} else {
 		rangeSlice := []int{}
 		for i := min; min < max; i++ {
