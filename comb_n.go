@@ -1,9 +1,6 @@
 package sprint
 
-import (
-	"fmt"
-	"math"
-)
+import "fmt"
 
 func CombN(n int) []string {
 	if n < 1 || n > 9 {
@@ -11,15 +8,13 @@ func CombN(n int) []string {
 	}
 
 	var combinations []string
-	maxDigit := 9
 	digits := make([]int, n)
-	base := int(math.Pow10(n - 1))
 
-	generateCombinations(0, 0, n, maxDigit, base, digits, &combinations)
+	generateCombinations(0, n, digits, &combinations)
 	return combinations
 }
 
-func generateCombinations(index, start, n, maxDigit, base int, digits []int, combinations *[]string) {
+func generateCombinations(index, n int, digits []int, combinations *[]string) {
 	if index == n {
 		combination := ""
 		for i := 0; i < n; i++ {
@@ -29,8 +24,13 @@ func generateCombinations(index, start, n, maxDigit, base int, digits []int, com
 		return
 	}
 
-	for i := start; i <= maxDigit; i++ {
+	start := 0
+	if index > 0 {
+		start = digits[index-1] + 1
+	}
+
+	for i := start; i <= 9; i++ {
 		digits[index] = i
-		generateCombinations(index+1, i+1, n, maxDigit, base, digits, combinations)
+		generateCombinations(index+1, n, digits, combinations)
 	}
 }
