@@ -1,25 +1,26 @@
 package sprint
 
 func SortIntegerTable(table []int) []int {
-	max := tabel[0]
-	result := []int
-	for i := 0; i < len(arr); i++ {
-		if max < tabel[i] {
-			max = tabel[i]
+	max := table[0]
+	result := []int{}
+	for i := 0; i < len(table); i++ {
+		if max < table[i] {
+			max = table[i]
 		}
 	}
 
-	for len(tabel) > 0 {
+	for len(table) > 0 {
 		min := 0
-		for i := 0; i < len(tabel); i++ {
-			if tabel[i] < tabel[min] {
+		for i := 0; i < len(table); i++ {
+			if table[i] < table[min] {
 				min = i
 			}
 
 		}
-		result = append(result, tabel[min])
-		tabel = append(tabel[:min], tabel[min+1]...)
+		result = append(result, table[min])
+		table = append(table[:min], table[min+1:]...)
 
 	}
 
+	return result
 }
