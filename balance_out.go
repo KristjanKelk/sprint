@@ -13,22 +13,15 @@ func BalanceOut(arr []bool) []bool {
 		}
 	}
 
-	// Calculate the number of true and false values needed to balance the slice
-	balanceCount := min(countTrue, countFalse)
-
-	// Create a new slice with balanced true and false values
-	balancedSlice := make([]bool, 2*balanceCount)
-
-	for i := 0; i < balanceCount; i++ {
-		balancedSlice[i] = true
-		balancedSlice[i+balanceCount] = false
+	if countTrue > countFalse {
+		for i := 0; i < countTrue-countFalse; i++ {
+			arr = append(arr, false)
+		}
+	} else if countTrue < countFalse {
+		for i := 0; i < countFalse-countTrue; i++ {
+			arr = append(arr, true)
+		}
 	}
 
-	return balancedSlice
-}
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
+	return arr
 }
