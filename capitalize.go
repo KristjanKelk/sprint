@@ -4,7 +4,6 @@ package sprint
 func Capitalize(s string) string {
 	result := make([]rune, len(s))
 	capitalizeNext := true // A flag to indicate whether the next character should be capitalized
-	wordStart := 0         // Index of the start of the current word
 	//if no input
 	if len(s) < 1 {
 		return s
@@ -24,14 +23,8 @@ func Capitalize(s string) string {
 			result[i] = char
 		}
 
-		// Keep track of the start of words for preserving spaces
-		if isAlphaNumeric(char) && (i == 0 || !isAlphaNumeric(rune(s[i-1]))) {
-			wordStart = i
-		}
 	}
-
-	// Construct the final result string while preserving spaces and non-alphanumeric characters
-	return string(result[:wordStart+1]) + string(result[wordStart+1:])
+	return string(result)
 }
 
 // isAlphaNumeric checks if a character is alphanumeric (a letter or a digit).
