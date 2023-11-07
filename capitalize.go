@@ -5,10 +5,12 @@ func Capitalize(s string) string {
 	result := make([]rune, len(s))
 
 	for i, char := range s {
-		if (char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z') {
+		if (char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z') || (char >= '0' && char <= '9') {
 			if capitalize {
 				if char >= 'a' && char <= 'z' {
 					char -= 'a' - 'A'
+				} else if char >= '0' && char <= '9' {
+					char = char
 				}
 				capitalize = false
 			}
