@@ -1,9 +1,9 @@
 package sprint
 
 func NRune(s string, i int) rune {
-	if len(s) == 0 {
+	if len(s) == 0 || i >= len(s) {
 		return 0
 	}
 
-	return rune(s[i-1])
+	return rune(s[i])
 }
