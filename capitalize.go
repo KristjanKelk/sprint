@@ -5,6 +5,10 @@ func Capitalize(s string) string {
 	result := make([]rune, len(s))
 	capitalizeNext := true // A flag to indicate whether the next character should be capitalized
 	wordStart := 0         // Index of the start of the current word
+	//if no input
+	if len(s) < 1 {
+		return s
+	}
 
 	for i, char := range s {
 		if isAlphaNumeric(char) { // Check if the character is alphanumeric
