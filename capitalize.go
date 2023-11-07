@@ -15,6 +15,9 @@ func Capitalize(s string) string {
 				capitalize = false
 			}
 			result[i] = char
+		} else if char >= 'A' && char <= 'Z' && !capitalize {
+			char += 'a' - 'A'
+			result[i] = char
 		} else {
 			capitalize = true
 			result[i] = char
