@@ -21,7 +21,7 @@ func NbrBase(n int, base string) string {
 	}
 	for n > 0 {
 		remainder := n % len(base)
-		result = string(base[remainder]) + result
+		result = result + string(base[remainder])
 		n = n / len(base)
 	}
 
