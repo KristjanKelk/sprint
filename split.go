@@ -28,6 +28,5 @@ func Split(s, sep string) []string {
 	// Append any remaining characters to the last word
 	word += sep[:separatorMatched]
 	words = append(words, word)
-
 	return words
 }
