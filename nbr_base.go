@@ -1,53 +1,32 @@
-package sprint
-
-import "strings"
+package main
 
 func NbrBase(n int, base string) string {
-	if !isValidBase(base) {
+	// Check if base contains at least 2 unique characters and does not contain '+' or '-'
+	charMap := make(map[rune]bool)
+	for _, char := range base {
+		if char == '+' || char == '-' {
+			return "NV"
+		}
+		charMap[char] = true
+	}
+	if len(charMap) < 2 {
 		return "NV"
 	}
 
-	if n == 0 {
-		return "0"
-	}
-
-	isNegative := n < 0
-	if isNegative {
+	// Convert the integer to the specified base
+	var result string
+	if n < 0 {
+		result = "-"
 		n = -n
 	}
-
-	result := ""
-	baseLength := len(base)
-
 	for n > 0 {
-		digit := n % baseLength
-		result = string(base[digit]) + result
-		n /= baseLength
+		remainder := n % len(base)
+		result = string(base[remainder]) + result
+		n = n / len(base)
 	}
 
-	if isNegative {
-		result = "-" + result
+	if result == "" {
+		result = "0"
 	}
-
 	return result
-}
-
-func isValidBase(base string) bool {
-	if len(base) < 2 {
-		return false
-	}
-
-	for i, ch := range base {
-		if ch == '+' || ch == '-' || strings.Count(base, string(ch)) > 1 {
-			return false
-		}
-
-		for _, otherCh := range base[i+1:] {
-			if ch == otherCh {
-				return false
-			}
-		}
-	}
-
-	return true
 }
