@@ -1,4 +1,4 @@
-package main
+package sprint
 
 func NbrBase(n int, base string) string {
 	// Check if base contains at least 2 unique characters and does not contain '+' or '-'
