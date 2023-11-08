@@ -1,7 +1,7 @@
 package sprint
 
 func NbrBase(n int, base string) string {
-	// Check if base contains at least 2 unique characters and does not contain '+' or '-'
+	// Step 1: Validate the base
 	charMap := make(map[rune]bool)
 	for _, char := range base {
 		if char == '+' || char == '-' {
@@ -13,7 +13,7 @@ func NbrBase(n int, base string) string {
 		return "NV"
 	}
 
-	// Convert the integer to the specified base
+	// Step 2: Convert the integer to the specified base
 	var result string
 	if n < 0 {
 		result = "-"
@@ -25,6 +25,7 @@ func NbrBase(n int, base string) string {
 		n = n / len(base)
 	}
 
+	// Step 3: Handle negative numbers and return the result
 	if result == "" {
 		result = "0"
 	}
