@@ -25,7 +25,6 @@ func Split(s, sep string) []string {
 			word += string(s[i])
 		}
 	}
-
 	if word != "" {
 		words = append(words, word)
 	}
