@@ -21,13 +21,15 @@ func NbrBase(n int, base string) string {
 	}
 	for n > 0 {
 		remainder := n % len(base)
-		result = result + string(base[remainder])
+		result = string(base[remainder]) + result
 		n = n / len(base)
 	}
 
 	// Step 3: Handle negative numbers and return the result
 	if result == "" {
 		result = "0"
+	} else if result == "-" {
+		result = string(base[0]) + result
 	}
 	return result
 }
