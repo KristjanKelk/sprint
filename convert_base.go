@@ -7,17 +7,12 @@ import (
 func ConvertBase(nbr, baseFrom, baseTo string) string {
 
 	// Step 1: Validate the base
-	charMap := make(map[rune]bool)
-	for _, char := range baseFrom {
-		if charMap[char] == true || char == '+' || char == '-' {
+	for _, char := range nbr {
+		if strings.IndexRune(baseFrom, char) == -1 {
 			return "NV"
 		}
-		charMap[char] = true
+		// Rest of the conversion logic
 	}
-	if len(charMap) < 2 {
-		return "NV"
-	}
-
 	number := 0
 	baseLength := len(baseFrom)
 
@@ -28,9 +23,7 @@ func ConvertBase(nbr, baseFrom, baseTo string) string {
 		number = number*baseLength + index
 	}
 
-	// Step 1: Validate the base
-
-	// Step 2: Convert the integer to the specified base
+	// Convert the integer to the specified base
 	var result string
 	if number < 0 {
 		number = -number
