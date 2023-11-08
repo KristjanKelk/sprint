@@ -4,6 +4,9 @@ func Split(s, sep string) []string {
 	words := []string{}
 	word := ""
 	separatorMatched := 0
+	if sep == "" {
+		return nil
+	}
 
 	for i := 0; i < len(s); i++ {
 		if s[i] == sep[separatorMatched] {
