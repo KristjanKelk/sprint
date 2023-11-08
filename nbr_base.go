@@ -15,9 +15,7 @@ func NbrBase(n int, base string) string {
 
 	// Step 2: Convert the integer to the specified base
 	var result string
-	if n == 0 {
-		return "0"
-	} else if n < 0 {
+	if n < 0 {
 		n = -n
 		for n > 0 {
 			remainder := n % len(base)
@@ -33,5 +31,9 @@ func NbrBase(n int, base string) string {
 		}
 	}
 
+	// Step 3: Handle negative numbers and return the result
+	if result == "" {
+		result = "0"
+	}
 	return result
 }
