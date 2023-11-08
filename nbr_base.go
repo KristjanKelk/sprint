@@ -1,10 +1,11 @@
 package sprint
 
+// NbrBase(-125, "choumi")
 func NbrBase(n int, base string) string {
 	// Step 1: Validate the base
 	charMap := make(map[rune]bool)
 	for _, char := range base {
-		if char == '+' || char == '-' {
+		if charMap[char] == true || char == '+' || char == '-' {
 			return "NV"
 		}
 		charMap[char] = true
