@@ -4,7 +4,7 @@ import "fmt"
 
 // CombN generates combinations of n digits from 1 to 9 and returns them as a slice of strings.
 func CombN(n int) []string {
-	// Check if the input 'n' is valid (between 1 and 9).
+
 	if n < 1 || n > 9 {
 		return nil // Return nil for invalid input values.
 	}

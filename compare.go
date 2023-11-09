@@ -22,3 +22,23 @@ func Compare(a, b string) int {
 
 	return 1
 }
+
+/*
+package sprint
+
+func Compare(a, b string) int {
+	minLength := len(a)
+	if len(b) < minLength {
+		minLength = len(b)
+	}
+
+	for i := 0; i < minLength; i++ {
+		diff := int(a[i]) - int(b[i])
+		if diff != 0 {
+			return diff
+		}
+	}
+
+	return len(a) - len(b)
+}
+*/
