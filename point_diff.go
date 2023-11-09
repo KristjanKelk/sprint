@@ -1,8 +1,8 @@
 package sprint
 
 type Point struct {
-	X int
-	Y int
+	X float32
+	Y float32
 }
 
 func PointDiff(p1, p2 Point) Point {
