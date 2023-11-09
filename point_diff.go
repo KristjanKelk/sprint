@@ -1,15 +1,15 @@
 package sprint
 
 type Point struct {
-	X float32
-	Y float32
+	P1 float32
+	P2 float32
 }
 
 func PointDiff(p1, p2 Point) Point {
-	if p1.X+p1.Y < p2.X+p2.Y {
-		return Point{X: p1.X, Y: p1.Y}
-	} else if p1.X+p1.Y > p2.X+p2.Y {
-		return Point{X: p2.X, Y: p2.Y}
+	if p1.P1+p1.P2 < p2.P1+p2.P2 {
+		return Point{P1: p1.P1, P2: p1.P2}
+	} else if p1.P1+p1.P2 > p2.P1+p2.P2 {
+		return Point{P1: p2.P1, P2: p2.P2}
 	}
-	return Point{X: p1.X, Y: p1.Y}
+	return Point{P1: p1.P1, P2: p1.P2}
 }
