@@ -14,7 +14,7 @@ func EightQueens() string {
 
 func placeQueens(queenColumns []int, row int, result *string) {
 	if row == 8 {
-		*result = (*result + " " + queensToString(queenColumns))
+		*result = (*result + "\n" + queensToString(queenColumns))
 		return
 	}
 
