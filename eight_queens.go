@@ -9,7 +9,7 @@ func EightQueens() string {
 	var result string
 	queenColumns := make([]int, 8)
 	placeQueens(queenColumns, 0, &result)
-	return result
+	return strings.TrimSpace(result)
 }
 
 func placeQueens(queenColumns []int, row int, result *string) {
