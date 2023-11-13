@@ -8,6 +8,6 @@ type Point1 struct {
 }
 
 // MakePoint creates and returns a new Point struct with the specified values.
-func makePoint(x, y float32, text string) Point1 {
+func makePoint1(x, y float32, text string) Point1 {
 	return Point1{X: x, Y: y, Text: text}
 }
