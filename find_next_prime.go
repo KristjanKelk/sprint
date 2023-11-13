@@ -14,7 +14,7 @@ func isPrime(num int) bool {
 
 func FindNextPrime(n int) int {
 	if n == 0 {
-		return 5
+		return 2
 	}
 	if n%2 == 0 {
 		n++
