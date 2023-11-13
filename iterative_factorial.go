@@ -1,7 +1,6 @@
 package sprint
 
 func IterativeFactorial(n int) int {
-	isNegative := false
 	factorial := 1
 
 	if n == 0 {
@@ -9,16 +8,11 @@ func IterativeFactorial(n int) int {
 	}
 
 	if n < 0 {
-		isNegative = true
-		n = -n
+		return 0
 	}
 
 	for i := 1; i <= n; i++ {
 		factorial *= i
-	}
-
-	if isNegative {
-		factorial *= -1
 	}
 
 	return factorial
