@@ -5,16 +5,16 @@ import (
 	"strings"
 )
 
-func EightQueens() []string {
-	var result []string
+func EightQueens() string {
+	var result string
 	queenColumns := make([]int, 8)
 	placeQueens(queenColumns, 0, &result)
 	return result
 }
 
-func placeQueens(queenColumns []int, row int, result *[]string) {
+func placeQueens(queenColumns []int, row int, result *string) {
 	if row == 8 {
-		*result = append(*result, queensToString(queenColumns))
+		*result = (*result + " " + queensToString(queenColumns))
 		return
 	}
 
