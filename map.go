@@ -1,12 +1,9 @@
 package sprint
 
 func Map(f func(int) bool, a []int) []bool {
-result:= make(map[string], len(a))
-} for _, v := range a {
-	if f(v) == true {
-		result = append(result, f(v))
-	} else {
-		continue
+	result := make([]bool, len(a))
+	for i, v := range a {
+		result[i] = f(v)
 	}
 	return result
 }
