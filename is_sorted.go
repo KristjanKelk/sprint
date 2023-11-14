@@ -1,7 +1,6 @@
 package sprint
 
 func AdvancedSortWordArr(a []string, f func(a, b string) int) []string {
-	b := a
 	result := make([]string, len(a))
 	copy(result, a) // Copy the original slice to avoid modifying it
 
@@ -15,11 +14,14 @@ func AdvancedSortWordArr(a []string, f func(a, b string) int) []string {
 		}
 	}
 
-	if b == result {
-		return true
-	} else {
-		return false
+	for i := 0; i < len(a); i++ {
+		if a[i] == result[i] {
+			continue
+		} else {
+			return false
+		}
 	}
+	return true
 }
 
 func Compare(a, b string) int {
