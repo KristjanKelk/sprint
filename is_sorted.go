@@ -1,4 +1,4 @@
-package main
+package sprint
 
 func IsSorted(arr []string, descending bool) bool {
 	n := len(arr)
