@@ -18,11 +18,14 @@ func IsSorted(f func(a, b string) int, arr []string) bool {
 	for i := 0; i < len(arr); i++ {
 		if arr[i] == result[i] {
 			continue
+		} else if arr[i] == result[len(result)-i] {
+			return true
 		} else {
 			return false
 		}
 	}
 	return true
+
 }
 
 func Compare(a, b string) int {
