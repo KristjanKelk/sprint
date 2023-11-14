@@ -1,8 +1,8 @@
 package sprint
 
-func AdvancedSortWordArr(a []string, f func(a, b string) int) []string {
-	result := make([]string, len(a))
-	copy(result, a) // Copy the original slice to avoid modifying it
+func IsSorted(f func(a, b string) int, arr []string) bool {
+	result := make([]string, len(arr))
+	copy(result, arr) // Copy the original slice to avoid modifying it
 
 	// Sorting the slice using the provided comparison function
 	for i := 0; i < len(result)-1; i++ {
@@ -14,8 +14,8 @@ func AdvancedSortWordArr(a []string, f func(a, b string) int) []string {
 		}
 	}
 
-	for i := 0; i < len(a); i++ {
-		if a[i] == result[i] {
+	for i := 0; i < len(arr); i++ {
+		if arr[i] == result[i] {
 			continue
 		} else {
 			return false
