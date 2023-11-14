@@ -1,28 +1,27 @@
 package sprint
 
-func IsSorted(arr []string, descending bool) bool {
-	n := len(arr)
+func IsSorted(f func(a, b string) int, arr []string) bool {
+	result := make([]string, len(arr))
+	copy(result, arr) // Copy the original slice to avoid modifying it
 
-	// Define the comparison function based on the desired order
-	compare := func(a, b string) int {
-		if descending {
-			return len(b) - len(a)
-		}
-		return len(a) - len(b)
-	}
-
-	// Iterate over the elements of the slice and compare adjacent pairs
-	for i := 0; i < n-1; i++ {
-		result := compare(arr[i], arr[i+1])
-
-		// Check if the order is correct based on the comparison result
-		if result > 0 {
-			return false
-		} else if result < 0 {
-			return false
+	// Sorting the slice using the provided comparison function
+	for i := 0; i < len(result)-1; i++ {
+		for j := i + 1; j < len(result); j++ {
+			if f(result[i], result[j]) > 0 {
+				// Swap elements if they are in the wrong order
+				result[i], result[j] = result[j], result[i]
+			}
 		}
 	}
 
+	// Check if the original slice is sorted
+	for i := 0; i < len(arr); i++ {
+		if arr[i] == result[i] {
+			continue
+		} else {
+			return false
+		}
+	}
 	return true
 }
 
