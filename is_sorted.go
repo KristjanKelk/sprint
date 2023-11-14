@@ -1,42 +1,27 @@
-package sprint
+package main
 
-func IsSorted(f func(a, b string) int, arr []string) bool {
-	result := make([]string, len(arr))
-	copy(result, arr) // Copy the original slice to avoid modifying it
+func IsSorted(arr []string, descending bool) bool {
+	n := len(arr)
 
-	// Sorting the slice using the provided comparison function
-	for i := 0; i < len(result)-1; i++ {
-		for j := i + 1; j < len(result); j++ {
-			if f(result[i], result[j]) > 0 {
-				// Swap elements if they are in the wrong order
-				result[i], result[j] = result[j], result[i]
-			}
+	// Define the comparison function based on the desired order
+	compare := func(a, b string) int {
+		if descending {
+			return len(b) - len(a)
 		}
+		return len(a) - len(b)
 	}
 
-	// Check if the original slice is sorted
-	for i := 0; i < len(arr); i++ {
-		if arr[i] == result[i] {
-			continue
-		} else {
+	// Iterate over the elements of the slice and compare adjacent pairs
+	for i := 0; i < n-1; i++ {
+		result := compare(arr[i], arr[i+1])
+
+		// Check if the order is correct based on the comparison result
+		if result > 0 {
+			return false
+		} else if result < 0 {
 			return false
 		}
 	}
+
 	return true
-}
-
-func Compare(a, b string) int {
-	minLength := len(a)
-	if len(b) < minLength {
-		minLength = len(b)
-	}
-
-	for i := 0; i < minLength; i++ {
-		diff := int(a[i]) - int(b[i])
-		if diff != 0 {
-			return diff
-		}
-	}
-
-	return len(a) - len(b)
 }
