@@ -25,7 +25,6 @@ func IsSorted(f func(a, b string) int, arr []string) bool {
 		}
 	}
 	return true
-
 }
 
 func Compare(a, b string) int {
