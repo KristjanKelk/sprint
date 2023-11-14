@@ -1,4 +1,4 @@
-package sprint
+/*package sprint
 
 func Compare(a, b string) int {
 	minLength := len(a)
@@ -22,11 +22,11 @@ func Compare(a, b string) int {
 
 	return 1
 }
+*/
 
-/*
 package sprint
 
-func Compare(a, b string) int {
+func compare(a, b string) int {
 	minLength := len(a)
 	if len(b) < minLength {
 		minLength = len(b)
@@ -41,4 +41,3 @@ func Compare(a, b string) int {
 
 	return len(a) - len(b)
 }
-*/

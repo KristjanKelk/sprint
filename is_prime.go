@@ -1,6 +1,6 @@
 package sprint
 
-func IsPrime(n int) bool {
+func isPrime(n int) bool {
 	// Check if n is less than or equal to 1
 	if n <= 1 {
 		return false

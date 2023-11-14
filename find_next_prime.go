@@ -1,6 +1,7 @@
 package sprint
 
-func isPrime(num int) bool {
+/*
+func IsPrime(num int) bool {
 	if num < 2 {
 		return false
 	}
@@ -26,3 +27,4 @@ func FindNextPrime(n int) int {
 
 	return n
 }
+*/

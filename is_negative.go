@@ -1,5 +1,5 @@
 package sprint
 
-func IsNegative(n int) bool {
+func isNegative(n int) bool {
 	return n < 0
 }

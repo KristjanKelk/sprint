@@ -12,7 +12,7 @@ func CountIf(f func(string) bool, tab []string) int {
 	return len(result)
 }
 
-func IsNumeric(s string) bool {
+/*func IsNumeric(s string) bool {
 	if s == "" {
 		return false
 	}
@@ -56,3 +56,4 @@ func IsAlphanumeric(s string) bool {
 	}
 	return true
 }
+*/
