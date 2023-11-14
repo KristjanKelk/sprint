@@ -14,11 +14,10 @@ func IsSorted(f func(a, b string) int, arr []string) bool {
 		}
 	}
 
+	// Check if the original slice is sorted
 	for i := 0; i < len(arr); i++ {
 		if arr[i] == result[i] {
 			continue
-		} else if arr[i] == result[len(arr)-i] {
-			return true
 		} else {
 			return false
 		}
