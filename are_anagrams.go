@@ -7,9 +7,8 @@ import (
 
 func AreAnagrams(str1, str2 string) bool {
 	// Remove leading and trailing whitespaces, and convert to lowercase
-	a := strings.ToLower(strings.TrimSpace(str1))
-	b := strings.ToLower(strings.TrimSpace(str2))
-
+	a := strings.ToLower(strings.ReplaceAll(str1, " ", ""))
+	b := strings.ToLower(strings.ReplaceAll(str2, " ", ""))
 	// Convert strings to slices of characters
 	aChars := strings.Split(a, "")
 	bChars := strings.Split(b, "")
