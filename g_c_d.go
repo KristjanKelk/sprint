@@ -9,7 +9,7 @@ func GCD(a, b int) int {
 		result = a
 		return result
 	} else if a == 0 || b == 0 {
-		return 0
+		return -1
 	}
 
 	for i := min / 2; i > 0; i-- {
