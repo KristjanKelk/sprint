@@ -17,6 +17,7 @@ func AdvancedSortWordArr(a []string, f func(a, b string) int) []string {
 	return result
 }
 
+/*
 func Compare(a, b string) int {
 	minLength := len(a)
 	if len(b) < minLength {
@@ -32,3 +33,4 @@ func Compare(a, b string) int {
 
 	return len(a) - len(b)
 }
+*/
