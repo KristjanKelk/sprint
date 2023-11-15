@@ -3,7 +3,7 @@ package sprint
 func GCD(a, b int) int {
 	result := 1
 	min := a
-	if min > b {
+	if min > b && b != 0 {
 		min = b
 	} else if a == b && a != 0 {
 		result = a
@@ -18,5 +18,5 @@ func GCD(a, b int) int {
 			return result
 		}
 	}
-	return result
+	return -1
 }
