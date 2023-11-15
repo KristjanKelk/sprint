@@ -1,9 +1,9 @@
 package sprint
 
 func Payout(amount int, denominations []int) (payout []int) {
-	//bubbleSort(denominations)
+	bubbleSort(denominations)
 
-	if denominations[0] == 0 {
+	if denominations == nil {
 		return []int{}
 	}
 
@@ -17,7 +17,7 @@ func Payout(amount int, denominations []int) (payout []int) {
 	return payout
 }
 
-/*func bubbleSort(arr []int) {
+func bubbleSort(arr []int) {
 	n := len(arr)
 	for i := 0; i < n-1; i++ {
 		for j := 0; j < n-i-1; j++ {
@@ -27,4 +27,3 @@ func Payout(amount int, denominations []int) (payout []int) {
 		}
 	}
 }
-*/
