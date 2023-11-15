@@ -3,7 +3,7 @@ package sprint
 func Payout(amount int, denominations []int) (payout []int) {
 	bubbleSort(denominations)
 
-	if denominations == nil {
+	if amount == 0 {
 		return []int{}
 	}
 
