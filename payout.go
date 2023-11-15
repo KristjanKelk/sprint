@@ -13,7 +13,7 @@ func Payout(amount int, denominations []int) (payout []int) {
 			amount -= denom
 		}
 	}
-
+	print(payout)
 	return payout
 }
 
