@@ -9,7 +9,7 @@ func LCM(a, b int) int {
 	}
 
 	if smaller == 0 {
-		return larger
+		return 0
 	}
 
 	for i := larger; ; i += larger {
