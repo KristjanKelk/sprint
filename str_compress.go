@@ -6,6 +6,10 @@ func StrCompress(input string) string {
 	result := ""
 	count := 1
 
+	if input == "" {
+		return input
+	}
+
 	for i := 1; i < len(input); i++ {
 		if input[i] == input[i-1] {
 			count++
@@ -13,9 +17,11 @@ func StrCompress(input string) string {
 			if count == 1 {
 				result += fmt.Sprintf("%c", input[i-1])
 				count = 1
+			} else if count > 1 {
+				result += fmt.Sprintf("%d%c", count, input[i-1])
+				count = 1
 			}
-			result += fmt.Sprintf("%d%c", count, input[i-1])
-			count = 1
+
 		}
 	}
 	if count == 1 {
