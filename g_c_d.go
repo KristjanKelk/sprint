@@ -5,7 +5,7 @@ func GCD(a, b int) int {
 	min := a
 	if min > b {
 		min = b
-	} else if a == b {
+	} else if a == b && a != 0 {
 		result = a
 		return result
 	} else if a == 0 || b == 0 {
