@@ -4,7 +4,7 @@ func Payout(amount int, denominations []int) (payout []int) {
 	bubbleSort(denominations)
 
 	if amount == 0 {
-		return []int{}
+		return payout
 	}
 
 	for _, denom := range denominations {
@@ -12,9 +12,6 @@ func Payout(amount int, denominations []int) (payout []int) {
 			payout = append(payout, denom)
 			amount -= denom
 		}
-	}
-	if payout == nil {
-		return []int{}
 	}
 	return payout
 }
