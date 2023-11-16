@@ -12,7 +12,8 @@ func Payout(amount int, denominations []int) (payout []int) {
 			amount -= denom
 		}
 	}
-	if amount != summ(denominations) {
+
+	if amount != summ(payout) {
 		return []int{}
 	}
 	return payout
