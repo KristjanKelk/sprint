@@ -15,3 +15,20 @@ func BalancedParentheses(input string) bool {
 	}
 	return false
 }
+
+/*chatgpt pakutud compact versioon minu koodist
+package sprint
+
+func BalancedParentheses(input string) bool {
+	var leftParent, rightParent int
+	for i := 0; i < len(input); i++ {
+		switch input[i] {
+		case ']', '}', ')':
+			rightParent++
+		case '[', '{', '(':
+			leftParent++
+		}
+	}
+	return leftParent == rightParent
+}
+*/
