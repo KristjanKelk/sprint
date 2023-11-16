@@ -13,9 +13,9 @@ func Overlap(arr1, arr2 []int) []int {
 
 	for i := 0; i < len(arr2); i++ {
 		for j := 0; j < len(arr1); j++ {
-			if arr1[j] == arr2[i] && !overlapped[arr2[i]] {
-				result = append(result, arr2[i])
-				overlapped[arr2[i]] = true
+			if arr1[j] == arr2[i] && !overlapped[arr1[j]] {
+				result = append(result, arr1[j])
+				overlapped[arr1[j]] = true
 				break
 			}
 		}
@@ -27,7 +27,7 @@ func bubbleSort(arr []int) {
 	n := len(arr)
 	for i := 0; i < n-1; i++ {
 		for j := 0; j < n-i-1; j++ {
-			if arr[j] < arr[j+1] {
+			if arr[j] > arr[j+1] {
 				arr[j], arr[j+1] = arr[j+1], arr[j]
 			}
 		}
