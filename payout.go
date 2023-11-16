@@ -1,12 +1,17 @@
 package sprint
 
 func Payout(amount int, denominations []int) (payout []int) {
-	bubbleSort(denominations)
 
 	if amount == 0 {
 		return payout
 	}
 
+	// If the requested amount is not equal to the sum of denominations, return an empty slice.
+	if amount != summ(denominations) {
+		return []int{}
+	}
+
+	bubbleSort(denominations)
 	for _, denom := range denominations {
 		for amount >= denom {
 			payout = append(payout, denom)
@@ -25,4 +30,12 @@ func bubbleSort(arr []int) {
 			}
 		}
 	}
+}
+
+func summ(arr []int) int {
+	sum := 0
+	for _, val := range arr {
+		sum += val
+	}
+	return sum
 }
