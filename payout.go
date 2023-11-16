@@ -1,11 +1,15 @@
 package sprint
 
 func Payout(amount int, denominations []int) (payout []int) {
-
 	if amount == 0 {
 		return payout
 	}
+
 	bubbleSort(denominations)
+
+	// Store the original amount for comparison later
+	originalAmount := amount
+
 	for _, denom := range denominations {
 		for amount >= denom {
 			payout = append(payout, denom)
@@ -13,10 +17,12 @@ func Payout(amount int, denominations []int) (payout []int) {
 		}
 	}
 
-	if amount != summ(payout) {
-		return []int{}
+	// Use the stored amount for the comparison
+	if originalAmount == summ(payout) {
+		return payout
 	}
-	return payout
+
+	return []int{}
 }
 
 func bubbleSort(arr []int) {
