@@ -5,18 +5,15 @@ func Payout(amount int, denominations []int) (payout []int) {
 	if amount == 0 {
 		return payout
 	}
-
-	// If the requested amount is not equal to the sum of denominations, return an empty slice.
-	if amount != summ(denominations) {
-		return []int{}
-	}
-
 	bubbleSort(denominations)
 	for _, denom := range denominations {
 		for amount >= denom {
 			payout = append(payout, denom)
 			amount -= denom
 		}
+	}
+	if amount != summ(denominations) {
+		return []int{}
 	}
 	return payout
 }
