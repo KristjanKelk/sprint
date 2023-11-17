@@ -1,25 +1,22 @@
 package sprint
 
 func Overlap(arr1, arr2 []int) []int {
-	if len(arr1) < len(arr2) {
-		arr1, arr2 = arr2, arr1
-	}
-	overlapped := make(map[int]bool)
-	for _, val := range arr1 {
-		overlapped[val] = false
-	}
-	result := []int{}
-	bubbleSort(arr2)
+	overlapped := make(map[int]int)
 
-	for i := 0; i < len(arr2); i++ {
-		for j := 0; j < len(arr1); j++ {
-			if arr1[j] == arr2[i] && !overlapped[arr1[j]] {
-				result = append(result, arr1[j])
-				overlapped[arr1[j]] = true
-				break
-			}
+	for _, num := range arr1 {
+		overlapped[num]++
+	}
+	var result []int
+
+	for _, num := range arr2 {
+		if count, ok := overlapped[num]; ok && count > 0 {
+			result = append(result, num)
+			overlapped[num]--
 		}
 	}
+
+	bubbleSort(result)
+
 	return result
 }
 

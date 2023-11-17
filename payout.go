@@ -5,7 +5,7 @@ func Payout(amount int, denominations []int) (payout []int) {
 		return payout
 	}
 
-	bubbleSort(denominations)
+	//bubbleSort(denominations)
 
 	// Store the original amount for comparison later
 	originalAmount := amount
