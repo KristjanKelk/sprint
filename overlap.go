@@ -16,7 +16,9 @@ func Overlap(arr1, arr2 []int) []int {
 	}
 
 	bubbleSort(result)
-
+	if len(result) < 1 {
+		return []int{}
+	}
 	return result
 }
 
